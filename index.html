@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelaporan Data OSIS 58</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+    body {background:#f8f9fa; color:#333;}
+
+    header {
+      background:#1d3557; color:white; padding:60px 20px; text-align:center;
+    }
+    header h1 {font-size:2.5em; margin-bottom:10px;}
+    header p {font-size:1.2em;}
+
+    section {padding:60px 20px; max-width:1100px; margin:auto;}
+    h2 {color:#1d3557; margin-bottom:30px; text-align:center;}
+    p {margin-bottom:15px; line-height:1.6;}
+
+    /* Tab laporan */
+    .laporan {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
+    .tab {
+      position:relative;
+      background:#1d3557; color:white;
+      padding:15px 25px; border-radius:10px;
+      cursor:pointer; font-weight:bold; text-align:center;
+      transition:0.3s;
+    }
+    .tab:hover {background:#457b9d;}
+    .tab p {
+      display:none; position:absolute;
+      left:50%; top:110%; transform:translateX(-50%);
+      width:250px; background:white; color:#333;
+      padding:15px; border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.15);
+      font-size:0.9em; line-height:1.4; z-index:10;
+    }
+    .tab:hover p {display:block;}
+
+    /* --- Profil anggota --- */
+    .anggota {display:flex; flex-direction:column; align-items:center; gap:40px;}
+
+    /* Container untuk ketua agar center */
+    .ketua-container {
+      display:flex;
+      justify-content:center;
+      margin-bottom:40px;
+      width:100%;
+    }
+
+    /* Kepala bidang */
+    .ketua {
+      width:260px; height:300px;
+      background:rgba(0,0,0,0.05);
+      border-radius:15px;
+      position:relative;
+      overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:bold; color:#1d3557;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s ease;
+    }
+    .ketua:hover {transform:scale(1.05);}
+    .ketua .jabatan {font-size:1.2em;}
+    .ketua .info {
+      position:absolute; inset:0;
+      background:white;
+      opacity:0; transform:scale(0.95);
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      padding:15px; text-align:center;
+      transition:all 0.4s ease;
+    }
+    .ketua:hover .info {opacity:1; transform:scale(1);}
+    .ketua img {width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:10px;}
+    .ketua h4 {margin:5px 0; color:#1d3557;}
+    .ketua p {margin:2px 0; font-size:0.9em; color:#555;}
+
+    /* Grid anggota */
+    .anggota-grid {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:25px;
+    }
+
+    .card {
+      height:260px;
+      background:rgba(0,0,0,0.05);
+      border-radius:15px;
+      position:relative;
+      overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:bold; color:#1d3557;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:transform 0.3s ease;
+    }
+    .card:hover {transform:scale(1.05);}
+    .card .jabatan {font-size:1.1em;}
+    .card .info {
+      position:absolute; inset:0;
+      background:white;
+      opacity:0; transform:scale(0.95);
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      padding:15px; text-align:center;
+      transition:all 0.4s ease;
+    }
+    .card:hover .info {opacity:1; transform:scale(1);}
+    .card img {width:100%; height:150px; object-fit:cover; border-radius:10px; margin-bottom:10px;}
+    .card h4 {margin:5px 0; color:#1d3557;}
+    .card p {margin:2px 0; font-size:0.85em; color:#555;}
+
+    footer {background:#1d3557; color:white; text-align:center; padding:20px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pelaporan Data OSIS 58</h1>
+    <p>Pusat Pengelolaan Data & Dokumentasi OSIS SMA Negeri 58</p>
+  </header>
+
+  <section id="tentang">
+    <h2>Tentang Pelaporan Data</h2>
+    <p>Bidang Palaporan Data adalah bidang yang bertanggungjawab dalam mengolah, menyajikan, dan melaporkan informasi data terkait kegiatan OSIS, Sekolah, maupun Siswa/i secara menyeluruh agar seluruh kegiatan di Sekolah dapat terdokumentasi dengan baik dengan dinaungi oleh OSIS serta Pihak Sekolah.</p>
+  </section>
+
+  <section id="laporan">
+    <h2>Tugas Bidang Pelaporan Data</h2>
+    <div class="laporan">
+      <div class="tab">Melaksanakan Piket Ekskul setiap hari nya.
+        <p>Kami mendata setiap ekskul yang melaksanakan kegiatan setiap harinya</p>
+      </div>
+      <div class="tab">Memeriksa, Melaporkan, dan Mengevaluasi Laporan Ekskul.
+        <p>Dari dara yang kami dapatkan kami akan memeriksa, melaporkan, dan mengevaluasi laporan ekskul yang diberikan kepada kami</p>
+      </div>
+       <div class="tab">Melaporkan Penilaian Ekskul.
+        <p>Kami melaporkan setiap penilaian ekskul ke atasan untuk di data pada pengambilan raport nanti</p>
+      </div>
+       <div class="tab">Memastikan keamanan kegiatan-kegiatan yang menggunakan fasilitas sekolah
+        <p>Kami akan memastikan keamanan keiatan ekskul yang berada di sekolah dan menggunakan fasilitas sekolahh</p>
+      </div>
+       <div class="tab">Mendamping kegiatan Ekskul selama berlangsung.
+        <p>Selama Ekstrakurikuler memiliki kegiatan kami akan siap menemani kegiatan itu selama berlangsung</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ekskul">
+    <h2>Ekstrakurikuler yang Dinaungi</h2>
+    <div class="laporan">
+      <div class="tab">Pramuka</div>
+      <div class="tab">Paskibra</div>
+      <div class="tab">PMR</div>
+      <div class="tab">Basket</div>
+      <div class="tab">Futsal</div>
+      <div class="tab">English Club</div>
+      <div class="tab">Go Grenn</div>
+      <div class="tab">Kesenian</div>
+      <div class="tab">IT Club</div>
+      <div class="tab">KIR</div>
+      <div class="tab">Bahasa Korea</div>
+      <div class="tab">Tari Tradisional</div>
+      <div class="tab">Ratoh Jaroe</div>
+      <div class="tab">Taekwondo</div>
+      <div class="tab">Silat</div>
+      <div class="tab">Badminton</div>
+      <div class="tab">Rohis</div>
+      <div class="tab">Rohkris</div>
+      <div class="tab">PKS</div>
+      <div class="tab">Paduan Suara</div>
+      <div class="tab">Mading</div>
+      <div class="tab">Teater</div>
+      <div class="tab">Volly</div>
+      <div class="tab">English Club</div>
+
+    </div>
+  </section>
+
+  <section id="anggota">
+    <h2>Profil Anggota Pelaporan Data OSIS 58</h2>
+
+    <!-- Ketua dibungkus biar center -->
+    <div class="ketua-container">
+      <div class="ketua">
+        <div class="jabatan">Kepala Bidang</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-31 at 19.31.59.jpeg" alt="Kepala Bidang">
+          <h4>M. Fadhilah Haykal</h4>
+          <p>XI MP</p>
+          <p>Kepala Bidang</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anggota -->
+    <div class="anggota-grid">
+      <div class="card">
+        <div class="jabatan">Sekretaris Bidang</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 18.28.40.jpeg" alt="Sekretaris Bidang">
+          <h4>Callista Laelani Santoso</h4>
+          <p>XI AKL 1</p>
+          <p>Sekretaris Bidang</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="jabatan">Anggota 1</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 18.36.19 (1).jpeg" alt="Anggota 1">
+          <h4>Anom Erlangga</h4>
+          <p>XI AKL 1</p>
+          <p>Anggota 1</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="jabatan">Anggota 2</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 18.29.06.jpeg" alt="Anggota 2">
+          <h4>Hadisty Vitriya</h4>
+          <p>XI MP</p>
+          <p>Anggota 2</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="jabatan">Anggota 3</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 19.03.43.jpeg" alt="Anggota 3">
+          <h4>Destri Chaiza Latifah B.</h4>
+          <p>XI M LOG</p>
+          <p>Anggota 3</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="jabatan">Anggota 4</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 18.33.47 (1).jpeg" alt="Anggota 4">
+          <h4>Raka Julio Same</h4>
+          <p>XI RP</p>
+          <p>Anggota 4</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="jabatan">Anggota 5</div>
+        <div class="info">
+          <img src="WhatsApp Image 2025-08-30 at 18.36.10 (1).jpeg" alt="Anggota 5">
+          <h4>M. Bintang Ramadhan</h4>
+          <p>XI BR</p>
+          <p>Anggota 5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Pelaporan Data OSIS 58 | Semua Hak Dilindungi</p>
+  </footer>
+</body>
+</html>
