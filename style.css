@@ -1,0 +1,50 @@
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+body {background:#f8f9fa; color:#333;}
+
+/* Navbar */
+nav {
+  background:#1d3557; color:white;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 30px; position:sticky; top:0; z-index:100;
+}
+nav .logo {font-size:1.3em; font-weight:bold;}
+nav ul {list-style:none; display:flex; gap:20px;}
+nav ul li a {
+  color:white; text-decoration:none; font-weight:bold;
+  padding:8px 14px; border-radius:6px; transition:0.3s;
+}
+nav ul li a:hover, nav ul li a.active {background:#457b9d;}
+
+/* Header */
+header {text-align:center; padding:60px 20px; background:#1d3557; color:white;}
+header h1 {font-size:2.5em; margin-bottom:10px;}
+
+/* Section */
+section {padding:50px 20px; max-width:1100px; margin:auto;}
+h2 {text-align:center; margin-bottom:30px; color:#1d3557;}
+
+/* Ekskul Grid */
+.ekskul-grid {display:flex; flex-wrap:wrap; gap:15px; justify-content:center;}
+.ekskul-grid span {
+  background:#457b9d; color:white; padding:10px 18px;
+  border-radius:8px; font-size:0.95em;
+  transition:0.3s;
+}
+.ekskul-grid span:hover {background:#1d3557;}
+
+/* List Tugas */
+.list-tugas {list-style:disc; padding-left:40px; line-height:1.8; font-size:1.1em;}
+
+/* Profil */
+.ketua {text-align:center; margin-bottom:40px;}
+.ketua img {width:200px; height:200px; border-radius:50%; object-fit:cover; margin-bottom:10px;}
+.anggota-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px;}
+.card {
+  background:white; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  text-align:center; padding:20px; transition:transform 0.3s;
+}
+.card:hover {transform:translateY(-5px);}
+.card img {width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:10px;}
+
+/* Footer */
+footer {background:#1d3557; color:white; text-align:center; padding:20px;}

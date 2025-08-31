@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Pelaporan Data OSIS 58</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Tooltip dasar */
+    .list-tugas li {
+      position: relative;
+      margin: 12px 0;
+      padding: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .list-tugas li:hover {
+      background: #f0f0f0;
+      border-radius: 8px;
+    }
+
+    .list-tugas li::after {
+      content: attr(data-deskripsi);
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: #333;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      width: 260px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 10;
+    }
+
+    .list-tugas li:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">OSIS 58</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tugas.html" class="active">Tugas</a></li>
+      <li><a href="profil.html">Profil Anggota</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Tugas Bidang Pelaporan Data</h1>
+  </header>
+
+  <section id="tugas">
+    <ul class="list-tugas">
+      <li data-deskripsi="Kami mendata setiap ekskul yang melaksanakan kegiatan setiap harinya.">
+        Melaksanakan Piket Ekskul setiap harinya.
+      </li>
+      <li data-deskripsi="Dari data yang kami dapatkan kami akan memeriksa, melaporkan, dan mengevaluasi laporan ekskul yang diberikan.">
+        Memeriksa, melaporkan, dan mengevaluasi laporan ekskul.
+      </li>
+      <li data-deskripsi="Kami melaporkan setiap penilaian ekskul ke atasan untuk di data pada pengambilan raport nanti.">
+        Melaporkan penilaian ekskul ke atasan.
+      </li>
+      <li data-deskripsi="Kami akan memastikan keamanan kegiatan ekskul yang berada di sekolah dan menggunakan fasilitas sekolah.">
+        Memastikan keamanan kegiatan yang menggunakan fasilitas sekolah.
+      </li>
+      <li data-deskripsi="Selama Ekstrakurikuler memiliki kegiatan kami akan siap menemani kegiatan itu selama berlangsung.">
+        Mendampingi kegiatan ekskul selama berlangsung.
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Pelaporan Data OSIS 58</p>
+  </footer>
+</body>
+</html>
